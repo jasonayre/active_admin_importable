@@ -23,7 +23,7 @@ class CsvDb
                target_model.create!(data)
              end
            end
-         rescue ::ArgumentError => e
+         rescue => e
            ::Rails.logger.error("IMPORT: ##{md5} FAILED TO PARSE ROW #{current_row}")
            failed_rows << current_row
            ::Rails.logger.error(e.message)
